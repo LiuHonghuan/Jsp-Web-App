@@ -21,21 +21,22 @@ public class BookController {
     private BookService bookService;
 
 
-    @RequestMapping("/test")
-    public void test() {
-        System.out.println("test");
-    }
-
     @RequestMapping("/list")
     public String listAllBook(Model model) {
         List<Book> books = bookService.listAllBook();
-        model.addAttribute("list", books);
+        model.addAttribute("bookList", books);
         return "allBook";
     }
 
     @RequestMapping("/add")
-    public void addBook(Book book) {
+    public String addBook(Book book) {
         bookService.addBook(book);
+        return "redirect:/book/list";
+    }
+
+    @RequestMapping("/addPage")
+    public String addBookPage() {
+        return "addPage";
     }
 
     @RequestMapping("/update")

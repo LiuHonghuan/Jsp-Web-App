@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: honghuan.liu
@@ -24,6 +25,10 @@
         <h1> list all book</h1>
     </div>
 
+    <div class="col-md-3">
+        <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/addPage">新增</a>
+    </div>
+
     <div class="col-md-12">
         <table class="table table-hover table-striped">
             <thead>
@@ -36,7 +41,20 @@
             </tr>
             </thead>
             <tbody>
+                <c:forEach var = "book" items="${requestScope.get('bookList')}">
+                    <tr>
+                        <td>${book.getId()}</td>
+                        <td>${book.getName()}</td>
+                        <td>${book.getCount()}</td>
+                        <td>${book.getNote()}</td>
 
+                        <td>
+                            <a href="${pageContext.request.contextPath}/book/update">更新</a>
+                            &nbsp;&nbsp;
+                            <a href="${pageContext.request.contextPath}/book/removeBook">删除</a>
+                        </td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>
