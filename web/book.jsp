@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: honghuan.liu
   Date: 2022/8/13
-  Time: 11:40
+  Time: 12:59
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,8 +13,4 @@
 <body>
 
 </body>
-
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
 </html>
