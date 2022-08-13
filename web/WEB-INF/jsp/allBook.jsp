@@ -49,9 +49,9 @@
                         <td>${book.getNote()}</td>
 
                         <td>
-                            <a href="${pageContext.request.contextPath}/book/update">更新</a>
+                            <a href="${pageContext.request.contextPath}/book/updatePage?id=${book.getId()}">更新</a>
                             &nbsp;&nbsp;
-                            <a href="${pageContext.request.contextPath}/book/removeBook">删除</a>
+                            <a href="${pageContext.request.contextPath}/book/removeBook?id=${book.getId()}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>

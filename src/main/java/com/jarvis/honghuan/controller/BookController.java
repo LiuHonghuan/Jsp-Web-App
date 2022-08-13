@@ -40,13 +40,22 @@ public class BookController {
     }
 
     @RequestMapping("/update")
-    public void updateBook(Book book) {
+    public String updateBook(Book book) {
         bookService.updateBook(book);
+        return "redirect:/book/list";
+    }
+
+    @RequestMapping("/updatePage")
+    public String updateBook(Model model, Long id) {
+        Book book = bookService.getBook(id);
+        model.addAttribute("book", book);
+        return "updateBook";
     }
 
     @RequestMapping("/removeBook")
-    public void removeBook(Long id) {
+    public String removeBook(Long id) {
         bookService.removeBook(id);
+        return "redirect:/book/list";
     }
 
     @RequestMapping("/get")
