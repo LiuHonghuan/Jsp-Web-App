@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>index</title>
   </head>
   <body>
-  $END$
+ <h1>
+   <a href="${pageContext.request.contextPath}/book/list">redirect book page</a>
+ </h1>
   </body>
 </html>
