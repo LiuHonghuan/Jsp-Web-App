@@ -62,4 +62,12 @@ public class BookController {
     public Book getBook(Long id) {
         return bookService.getBook(id);
     }
+
+    @RequestMapping("/queryBook")
+    public String queryBook(Model model,String bookName) {
+        List<Book> books = bookService.queryBook(bookName);
+        model.addAttribute("bookList", books);
+        return "allBook";
+
+    }
 }

@@ -36,9 +36,18 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book getBook(Long id){
+    public Book getBook(Long id) {
         Map<Long, Book> bookMap = bookListCache.stream().collect(Collectors.toMap(Book::getId, k -> k));
         return bookMap.get(id);
+    }
+
+    @Override
+    public List<Book> queryBook(String bookName) {
+        if (bookName.isBlank()) {
+            return bookListCache;
+        }
+        Map<String, List<Book>> bookMap = bookListCache.stream().collect(Collectors.groupingBy(k -> k.getName()));
+        return bookMap.get(bookName);
     }
 
     @Override
@@ -59,7 +68,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void removeBook(Long id){
+    public void removeBook(Long id) {
         Map<Long, Book> bookMap = bookListCache.stream().collect(Collectors.toMap(Book::getId, k -> k));
         Book book1 = bookMap.get(id);
         if (Objects.nonNull(book1)) {

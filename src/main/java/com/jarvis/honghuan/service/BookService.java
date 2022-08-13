@@ -19,4 +19,6 @@ public interface BookService {
     void removeBook(Long id);
 
     Book getBook(Long id);
+
+    List<Book> queryBook(String bookName);
 }

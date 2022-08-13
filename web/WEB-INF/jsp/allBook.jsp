@@ -25,8 +25,19 @@
         <h1> list all book</h1>
     </div>
 
+    <div>
+
+
     <div class="col-md-3">
         <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/addPage">新增</a>
+    </div>
+
+        <div class="col-md-3">
+           <form action="${pageContext.request.contextPath}/book/queryBook" method="post" >
+                <input type="text" placeholder="请输入name" name="bookName">
+               <input type="submit" class="btn btn-primary" value="查询">
+           </form>
+        </div>
     </div>
 
     <div class="col-md-12">
